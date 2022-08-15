@@ -1,6 +1,6 @@
 # vue3-phonebook
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue3 phonebook example
 
 ## Recommended IDE Setup
 
