@@ -1,21 +1,27 @@
 <script setup>
 import { ref } from "vue";
-const todos = ref([
-  "Сходить за хлебом",
-  "Купить воблы",
-  "Не забыть про пивасик",
-  "А! еще колбаски",
-]);
+const newPhone = ref("");
+//массив с данными, обычный массив
+const phones = ref([]);
+function addPhone() {
+  //видимость переменных получаем через this
+  phones.value.push(newPhone.value); //нам не надо заботится о выводе новых данных
+  //как только элемент будет добавлен в массив, он появится в списке
+  newPhone.value = ""; // затираем переменную ввода
+}
 </script>
 
 <template>
   <div>
-    <h2>Выводим список дел</h2>
-    <br />
+    <!-- Описываем поле вводы и вешаем обработчик на нажатие клавиши Enter -->
+    <input
+      placeholder="Введите номер"
+      v-model="newPhone"
+      @keyup.enter="addPhone"
+    />
     <ul>
-      <li v-for="todo in todos" :key="todo">{{ todo }}</li>
-      <!-- Перебираем массив todos и каждый элемент доступенв todo,
-      вы водим в шаблон-->
+      <!-- Уже знакомый вывод списком-->
+      <li v-for="phone in phones" :key="phone">{{ phone }}</li>
     </ul>
   </div>
 </template>
