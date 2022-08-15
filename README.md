@@ -1,6 +1,7 @@
 # vue3-phonebook
 
-Vue3 phonebook example
+### Vue3 phonebook example
+Реализация простого интерфейса vue телефонного справочника без дизайна
 
 ## Recommended IDE Setup
 
